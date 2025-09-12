@@ -21,10 +21,6 @@ Sub Customer()
     tabCustomer.Cells(1, "A") = "Customer ID"
     tabCustomer.Cells(1, "B") = "Customer Name"
     
-    
-    
-    
-    
     intI = 2
     
     Do Until Tabelle2.Cells(intI, "A") = ""
@@ -227,4 +223,3 @@ Sub Customer()
     Loop
     
 End Sub
-
