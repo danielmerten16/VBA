@@ -55,25 +55,30 @@ Sub Customer()
         intI = intI + 1
     Loop
     
+    
+    
     intI = 2
     intJ = 2
     
-    tabCustomer.Cells(1, "C") = "Orders"
-    Do Until Tabelle2.Cells(intI, "A") = ""
-        If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
-            intJ = intJ + 1
-        End If
-        If Tabelle2.Cells(intI, "G") = tabCustomer.Cells(intJ - 1, "B") Then
-            If intJ <> 2 Then
-                tabCustomer.Cells(intJ - 1, "C") = tabCustomer.Cells(intJ - 1, "C") + 1
+    If MsgBox("Do you will a Orders", vbOKCancel) = 1 Then
+        tabCustomer.Cells(1, "C") = "Orders"
+        Do Until Tabelle2.Cells(intI, "A") = ""
+            If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
+                intJ = intJ + 1
             End If
-        End If
-        intI = intI + 1
-    Loop
+            If Tabelle2.Cells(intI, "G") = tabCustomer.Cells(intJ - 1, "B") Then
+                If intJ <> 2 Then
+                    tabCustomer.Cells(intJ - 1, "C") = tabCustomer.Cells(intJ - 1, "C") + 1
+                End If
+            End If
+            intI = intI + 1
+        Loop
+    End If
     
     intI = 2
     intJ = 2
-
+    
+    If MsgBox("Do you will a Canceled", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "D") = "Canceled"
     Do Until Tabelle2.Cells(intI, "A") = ""
         If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
@@ -88,10 +93,12 @@ Sub Customer()
         End If
         intI = intI + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
-
+    
+    If MsgBox("Do you will a Sales volume", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "E") = "Sales volume"
     Do Until Tabelle2.Cells(intI, "A") = ""
         If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
@@ -107,10 +114,12 @@ Sub Customer()
         End If
         intI = intI + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
-
+    
+    If MsgBox("Do you will a Postage", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "F") = "Postage"
     Do Until Tabelle2.Cells(intI, "A") = ""
         If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
@@ -123,6 +132,7 @@ Sub Customer()
         End If
         intI = intI + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
@@ -149,6 +159,7 @@ Sub Customer()
     intI = 2
     intJ = 2
     
+    If MsgBox("Do you will a Not uset Customer ID", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "G") = "Not uset Customer ID"
     intZ = 0
     Do Until tabCustomer.Cells(intJ, "A") = ""
@@ -158,10 +169,12 @@ Sub Customer()
         Next intnotuse
         intJ = intJ + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
     
+    If MsgBox("Do you will a Product", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "I") = "Product Category"
     intZ = 0
     Do Until Tabelle2.Cells(intI, "A") = ""
@@ -179,11 +192,13 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
     intZ = 0
     
+    If MsgBox("Do you will a Product Sub-Category", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "L") = "Product Sub-Category"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
@@ -200,11 +215,13 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
+    End If
     
     intI = 2
     intJ = 2
     intZ = 0
     
+    If MsgBox("Do you will a Product Container", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "O") = "Product Container"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
@@ -221,5 +238,6 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
-    
+    End If
+            
 End Sub
