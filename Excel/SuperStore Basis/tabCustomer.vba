@@ -136,28 +136,6 @@ Sub Customer()
     
     intI = 2
     intJ = 2
-
-    Do Until Tabelle2.Cells(intI, "A") = ""
-        If Tabelle2.Cells(intI, "G") <> tabCustomer.Cells(intJ - 1, "B") Then
-            intJ = intJ + 1
-        End If
-        If intJ > 4 Then
-            If tabCustomer.Cells(intJ - 2, "A") < tabCustomer.Cells(intJ - 3, "A") And intZ = 0 Then
-                'MsgBox intJ
-                'intZ = 0
-                For intMov = 1 To 6
-                     tabCustomer.Cells(intJ, intMov) = tabCustomer.Cells(intJ - 3, intMov)
-                     tabCustomer.Cells(intJ - 3, intMov) = tabCustomer.Cells(intJ - 2, intMov)
-                     tabCustomer.Cells(intJ - 2, intMov) = tabCustomer.Cells(intJ, intMov)
-                     tabCustomer.Cells(intJ, intMov) = ""
-                Next intMov
-            End If
-        End If
-        intI = intI + 1
-    Loop
-    
-    intI = 2
-    intJ = 2
     
     If MsgBox("Do you will a Not uset Customer ID", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "G") = "Not uset Customer ID"
