@@ -107,6 +107,8 @@ Sub Customer()
         Next intnotuse
         intI = intI + 1
     Loop
+    tabCustomer.Cells(intJ + 2, "F") = "Letzter Wert: "
+    tabCustomer.Cells(intJ + 2, "G") = intZ
     End If
     
     intI = 2
