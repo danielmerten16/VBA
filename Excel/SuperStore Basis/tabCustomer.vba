@@ -96,17 +96,15 @@ Sub Customer()
     tabCustomer.Cells(1, "G") = "Not uset Customer ID"
     intZ = 0
     Do Until tabCustomer.Cells(intI, "A") = Empty
-        If tabCustomer.Cells(intI + 1, "A") > tabCustomer.Cells(intI, "A") Then
-            For intnotuse = intnotuse To tabCustomer.Cells(intI, "A")
-                If tabCustomer.Cells(intI, "A") = intnotuse Then
-                    intJ = intJ - 1
-                Else
-                    tabCustomer.Cells(intJ + 2, "G") = intZ
-                End If
-                intJ = intJ + 1
-                intZ = intZ + 1
-            Next intnotuse
-        End If
+        For intnotuse = intnotuse To tabCustomer.Cells(intI, "A")
+            If tabCustomer.Cells(intI, "A") = intnotuse Then
+                intJ = intJ - 1
+            Else
+                tabCustomer.Cells(intJ + 2, "G") = intZ
+            End If
+            intJ = intJ + 1
+            intZ = intZ + 1
+        Next intnotuse
         intI = intI + 1
     Loop
     End If
