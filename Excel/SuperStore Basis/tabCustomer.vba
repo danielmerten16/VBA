@@ -92,7 +92,7 @@ Sub Customer()
     intJ = 0
     intnotuse = 0
     
-    'If MsgBox("Do you will a Not uset Customer ID", vbOKCancel) = 1 Then
+    If MsgBox("Do you will a Not uset Customer ID", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "G") = "Not uset Customer ID"
     intZ = 0
     Do Until tabCustomer.Cells(intI, "A") = Empty
@@ -109,12 +109,12 @@ Sub Customer()
         End If
         intI = intI + 1
     Loop
-    'End If
+    End If
     
     intI = 2
     intJ = 2
     
-    'If MsgBox("Do you will a Product", vbOKCancel) = 1 Then
+    If MsgBox("Do you will a Product", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "I") = "Product Category"
     intZ = 0
     Do Until Tabelle2.Cells(intI, "A") = ""
@@ -132,13 +132,13 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
-    'End If
+    End If
     
     intI = 2
     intJ = 2
     intZ = 0
     
-    'If MsgBox("Do you will a Product Sub-Category", vbOKCancel) = 1 Then
+    If MsgBox("Do you will a Product Sub-Category", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "L") = "Product Sub-Category"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
@@ -155,13 +155,13 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
-    'End If
+    End If
     
     intI = 2
     intJ = 2
     intZ = 0
     
-    'If MsgBox("Do you will a Product Container", vbOKCancel) = 1 Then
+    If MsgBox("Do you will a Product Container", vbOKCancel) = 1 Then
     tabCustomer.Cells(1, "O") = "Product Container"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
@@ -178,6 +178,6 @@ Sub Customer()
         intZ = 0
         intI = intI + 1
     Loop
-    'End If
+    End If
             
 End Sub
