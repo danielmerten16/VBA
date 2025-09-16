@@ -24,11 +24,12 @@ Sub Orders()
         Do Until "" = Tabelle3.Cells(intA, "A")
             If Tabelle2.Cells(intI, "Y") = Tabelle3.Cells(intA, "A") Then
                 Tabelle2.Cells(intI, "AA") = Tabelle3.Cells(intA, "B")
-            Else
-                Tabelle2.Cells(intI, "AA") = "Not Returned"
             End If
             intA = intA + 1
         Loop
+        If Tabelle2.Cells(intI, "AA") = "" Then
+            Tabelle2.Cells(intI, "AA") = "Not Returned"
+        End If
         intI = intI + 1
         intA = 2
     Loop
