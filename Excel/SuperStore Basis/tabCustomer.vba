@@ -59,7 +59,7 @@ Sub Customer()
                 If Orders Then
                     tabCustomer.Cells(intJ - 1, "C") = tabCustomer.Cells(intJ - 1, "C") + 1
                 End If
-                If Tabelle2.Cells(intI, "AA") <> "" Then
+                If Tabelle2.Cells(intI, "AA") <> "Not Returned" Then
                     If Canceled Then
                         tabCustomer.Cells(intJ - 1, "D") = tabCustomer.Cells(intJ - 1, "D") + 1
                     End If
@@ -181,3 +181,4 @@ Sub Customer()
     End If
             
 End Sub
+
