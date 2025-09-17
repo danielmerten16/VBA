@@ -66,6 +66,9 @@ Sub Customer()
                 Else
                     If Sales_volume Then
                         tabCustomer.Cells(intJ - 1, "E") = tabCustomer.Cells(intJ - 1, "E") + Tabelle2.Cells(intI, "X")
+                        If tabCustomer.Cells(intJ - 1, "D") = "" Then
+                            tabCustomer.Cells(intJ - 1, "D") = 0
+                        End If
                     End If
                 End If
                 If Postage Then
@@ -87,6 +90,8 @@ Sub Customer()
         End If
         intI = intI + 1
     Loop
+    
+    
     
     intI = 2
     intJ = 0
@@ -181,4 +186,5 @@ Sub Customer()
     End If
             
 End Sub
+
 
