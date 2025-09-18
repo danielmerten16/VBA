@@ -30,19 +30,19 @@ Sub Customer()
     ''Titel Übersicht
     tabCustomer.Cells(1, "A") = "Customer ID"
     tabCustomer.Cells(1, "B") = "Customer Name"
-    If MsgBox("Do you will a Orders", vbOKCancel) = 1 Then
+    If MsgBox("Should the orders be evaluated?", vbOKCancel, "Query") = 1 Then
         tabCustomer.Cells(1, "C") = "Orders"
         Orders = True
     End If
-    If MsgBox("Do you will a Canceled", vbOKCancel) = 1 Then
+    If MsgBox("Should the cancellations be evaluated?", vbOKCancel, "Query") = 1 Then
         tabCustomer.Cells(1, "D") = "Canceled"
         Canceled = True
     End If
-    If MsgBox("Do you will a Sales volume", vbOKCancel) = 1 Then
+    If MsgBox("Should the sales volume be evaluated?", vbOKCancel, "Query") = 1 Then
         tabCustomer.Cells(1, "E") = "Sales volume"
         Sales_volume = True
     End If
-    If MsgBox("Do you will a Postage", vbOKCancel) = 1 Then
+    If MsgBox("Should the postage be evaluated?", vbOKCancel, "Query") = 1 Then
         tabCustomer.Cells(1, "F") = "Postage"
         Postage = True
     End If
@@ -66,9 +66,6 @@ Sub Customer()
                 Else
                     If Sales_volume Then
                         tabCustomer.Cells(intJ - 1, "E") = tabCustomer.Cells(intJ - 1, "E") + Tabelle2.Cells(intI, "X")
-                        If tabCustomer.Cells(intJ - 1, "D") = "" Then
-                            tabCustomer.Cells(intJ - 1, "D") = 0
-                        End If
                     End If
                 End If
                 If Postage Then
@@ -97,7 +94,7 @@ Sub Customer()
     intJ = 0
     intnotuse = 0
     
-    If MsgBox("Do you will a Not uset Customer ID", vbOKCancel) = 1 Then
+    If MsgBox("Should unused customer numbers be identified?", vbOKCancel, "Query") = 1 Then
     tabCustomer.Cells(1, "G") = "Not uset Customer ID"
     intZ = 0
     Do Until tabCustomer.Cells(intI, "A") = Empty
@@ -119,7 +116,7 @@ Sub Customer()
     intI = 2
     intJ = 2
     
-    If MsgBox("Do you will a Product", vbOKCancel) = 1 Then
+    If MsgBox("Should product categories be evaluated?", vbOKCancel, "Query") = 1 Then
     tabCustomer.Cells(1, "I") = "Product Category"
     intZ = 0
     Do Until Tabelle2.Cells(intI, "A") = ""
@@ -143,8 +140,8 @@ Sub Customer()
     intJ = 2
     intZ = 0
     
-    If MsgBox("Do you will a Product Sub-Category", vbOKCancel) = 1 Then
-    tabCustomer.Cells(1, "L") = "Product Sub-Category"
+    If MsgBox("Should product subcategories be evaluated?", vbOKCancel, "Query") = 1 Then
+    tabCustomer.Cells(1, "L") = "Product subcategory"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
             If tabCustomer.Cells(intA, "L") = Tabelle2.Cells(intI, "K") Then
@@ -166,7 +163,7 @@ Sub Customer()
     intJ = 2
     intZ = 0
     
-    If MsgBox("Do you will a Product Container", vbOKCancel) = 1 Then
+    If MsgBox("Should product containers be evaluated?", vbOKCancel, "Query") = 1 Then
     tabCustomer.Cells(1, "O") = "Product Container"
     Do Until Tabelle2.Cells(intI, "A") = ""
         For intA = 2 To intJ
