@@ -10,7 +10,7 @@ Sub subHallo()
     
     ''Anfang des Zaehlers
     intI = 2
-    intWrite = 1
+    intWrite = 0
     intAktMonat = Month(Date) - 1
 
     
