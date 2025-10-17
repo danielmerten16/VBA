@@ -19,6 +19,7 @@ Sub subHallo()
     Dim intMainJahr As Integer
     Dim RowIndex As Integer
     Dim intAktMonat As Integer
+    Dim sinProtzent As Single
     
     ''Anfang des Zaehlers
     intI = 2
@@ -35,7 +36,9 @@ Sub subHallo()
         intI = intI + 1
     Loop While "" <> tabGrunddaten.Cells(intI, "A")
     
-   For intJ = 2 To intI
+    sinProtzent = InputBox("Protzent", "Protzent Berechnung", Default, 100, 100)
+    
+    For intJ = 2 To intI
         If tabGrunddaten.Cells(intJ, "A") = intMaxJahr Then
                 tabGrunddaten.Cells(intI + IntWrite, "A") = tabGrunddaten.Cells(intJ, "A") + 1
                 tabGrunddaten.Cells(intI + IntWrite, "B") = tabGrunddaten.Cells(intJ, "B")
@@ -43,7 +46,7 @@ Sub subHallo()
                 tabGrunddaten.Cells(intI + IntWrite, "D") = tabGrunddaten.Cells(intJ, "D")
                 tabGrunddaten.Cells(intI + IntWrite, "E") = tabGrunddaten.Cells(intJ, "E")
                 tabGrunddaten.Cells(intI + IntWrite, "F") = tabGrunddaten.Cells(intJ, "F")
-                tabGrunddaten.Cells(intI + IntWrite, "G") = funcCurProtzent(tabGrunddaten.Cells(intJ, "G"), InputBox("Protzent", "Protzent Berechnung", Default, 100, 100))
+                tabGrunddaten.Cells(intI + IntWrite, "G") = funcCurProtzent(tabGrunddaten.Cells(intJ, "G"), sinProtzent)
                 IntWrite = IntWrite + 1
             End If
     Next intJ
