@@ -37,5 +37,3 @@ Sub subHallo()
     Next intJ
     
 End Sub
-
-
