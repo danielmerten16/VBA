@@ -1,0 +1,53 @@
+Option Explicit
+
+Function funcCurProtzent(ByVal curLetzterJahr As Currency, ByVal sigProtzent As Single) As Currency
+    Dim Ergebnis As Currency
+    
+    Ergebnis = curLetzterJahr * ((sigProtzent / 100) + 1)
+        
+    funcCurProtzent = Ergebnis
+End Function
+
+
+Sub subHallo()
+    
+    Dim IntI As Integer
+    Dim intJ As Integer
+    Dim IntWrite As Integer
+    Dim intMinJahr As Integer
+    Dim intMaxJahr As Integer
+    Dim intMainJahr As Integer
+    Dim RowIndex As Integer
+    Dim intAktMonat As Integer
+    
+    ''Anfang des Zaehlers
+    IntI = 2
+    IntWrite = 0
+    intAktMonat = Month(Date) - 1
+
+    
+    ''Jahres ermitlung Min und Max Jahr
+    Do
+        intMainJahr = tabGrunddaten.Cells(IntI, "A")
+        If intMainJahr >= intMaxJahr Then
+            intMaxJahr = tabGrunddaten.Cells(IntI, "A")
+        End If
+        IntI = IntI + 1
+    Loop While "" <> tabGrunddaten.Cells(IntI, "A")
+    
+    For intJ = 2 To IntI
+        If tabGrunddaten.Cells(intJ, "A") = intMaxJahr Then
+            If intMainJahr = intMaxJahr Then
+                tabGrunddaten.Cells(IntI + IntWrite, "A") = tabGrunddaten.Cells(intJ, "A") + 1
+                tabGrunddaten.Cells(IntI + IntWrite, "B") = tabGrunddaten.Cells(intJ, "B")
+                tabGrunddaten.Cells(IntI + IntWrite, "C") = tabGrunddaten.Cells(intJ, "C")
+                tabGrunddaten.Cells(IntI + IntWrite, "D") = tabGrunddaten.Cells(intJ, "D")
+                tabGrunddaten.Cells(IntI + IntWrite, "E") = tabGrunddaten.Cells(intJ, "E")
+                tabGrunddaten.Cells(IntI + IntWrite, "F") = tabGrunddaten.Cells(intJ, "F")
+                tabGrunddaten.Cells(IntI + IntWrite, "G") = funcCurProtzent(tabGrunddaten.Cells(intJ, "G"), InputBox("Protzent", "Protzent Berechnung", Default, 100, 100))
+                IntWrite = IntWrite + 1
+            End If
+        End If
+    Next intJ
+    
+End Sub
