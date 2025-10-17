@@ -1,6 +1,6 @@
 Sub subHallo()
     
-    Dim IntI As Integer
+    Dim intI As Integer
     Dim IntWrite As Integer
     Dim intMinJahr As Integer
     Dim intMaxJahr As Integer
@@ -9,34 +9,33 @@ Sub subHallo()
     Dim intAktMonat As Integer
     
     ''Anfang des Zaehlers
-    IntI = 2
+    intI = 2
     IntWrite = 0
     intAktMonat = Month(Date) - 1
 
     
     ''Jahres ermitlung Min und Max Jahr
     Do
-        intMainJahr = tabGrunddaten.Cells(IntI, "A")
+        intMainJahr = tabGrunddaten.Cells(intI, "A")
         If intMainJahr >= intMaxJahr Then
-            intMaxJahr = tabGrunddaten.Cells(IntI, "A")
+            intMaxJahr = tabGrunddaten.Cells(intI, "A")
         End If
-        IntI = IntI + 1
-    Loop While "" <> tabGrunddaten.Cells(IntI, "A")
+        intI = intI + 1
+    Loop While "" <> tabGrunddaten.Cells(intI, "A")
     
-    For IntJ = 2 To IntI
-        If tabGrunddaten.Cells(IntJ, "A") = intMaxJahr Then
-            If intMainJahr = intMaxJahr Then
-                tabGrunddaten.Cells(IntI + IntWrite, "A") = tabGrunddaten.Cells(IntJ, "A") + 1
-                tabGrunddaten.Cells(IntI + IntWrite, "B") = tabGrunddaten.Cells(IntJ, "B")
-                tabGrunddaten.Cells(IntI + IntWrite, "C") = tabGrunddaten.Cells(IntJ, "C")
-                tabGrunddaten.Cells(IntI + IntWrite, "D") = tabGrunddaten.Cells(IntJ, "D")
-                tabGrunddaten.Cells(IntI + IntWrite, "E") = tabGrunddaten.Cells(IntJ, "E")
-                tabGrunddaten.Cells(IntI + IntWrite, "F") = tabGrunddaten.Cells(IntJ, "F")
-                tabGrunddaten.Cells(IntI + IntWrite, "G") = tabGrunddaten.Cells(IntJ, "G") * 1.05
-                IntWrite = IntWrite + 1
-            End If
+    For intJ = 2 To intI
+        If tabGrunddaten.Cells(intJ, "A") = intMaxJahr Then
+            tabGrunddaten.Cells(intI + IntWrite, "A") = tabGrunddaten.Cells(intJ, "A") + 1
+            tabGrunddaten.Cells(intI + IntWrite, "B") = tabGrunddaten.Cells(intJ, "B")
+            tabGrunddaten.Cells(intI + IntWrite, "C") = tabGrunddaten.Cells(intJ, "C")
+            tabGrunddaten.Cells(intI + IntWrite, "D") = tabGrunddaten.Cells(intJ, "D")
+            tabGrunddaten.Cells(intI + IntWrite, "E") = tabGrunddaten.Cells(intJ, "E")
+            tabGrunddaten.Cells(intI + IntWrite, "F") = tabGrunddaten.Cells(intJ, "F")
+            tabGrunddaten.Cells(intI + IntWrite, "G") = tabGrunddaten.Cells(intJ, "G") * 1.05
+            IntWrite = IntWrite + 1
         End If
-    Next IntJ
+    Next intJ
     
 End Sub
+
 
