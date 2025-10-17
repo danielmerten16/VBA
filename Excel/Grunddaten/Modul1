@@ -46,7 +46,6 @@ Sub subHallo()
                 tabGrunddaten.Cells(intI + IntWrite, "G") = funcCurProtzent(tabGrunddaten.Cells(intJ, "G"), InputBox("Protzent", "Protzent Berechnung", Default, 100, 100))
                 IntWrite = IntWrite + 1
             End If
-        End If
     Next intJ
     
 End Sub
